@@ -25,20 +25,22 @@ public class JobController {
         System.out.println(book.toString());
         bookService.add(book);
     }
-    //NOT WORKING PROPERLY !!!!!!!!!!!!!!!!!!!!!!
     @PostMapping(value = "/remove")
     public void removeBook(@RequestBody String name) {
-        System.out.println(name + name);
-        System.out.println("Remove Book Call");
-        System.out.println(name);
+        System.out.println("Remove Book Call (for book: " + name + ")");
         bookService.remove(name);
     }
-    //NOT WORKING PROPERLY !!!!!!!!!!!!!!!!!!!!!!
 
     @GetMapping(value = "/list")
     public List<Book> getAllBooks() {
         System.out.println("Get All Books call");
         return bookService.getAll();
+    }
+
+    @GetMapping(value = "/list/names")
+    public List<String> getAllBookNames() {
+        System.out.println("Get All Book Names Call");
+        return bookService.getAllNames();
     }
 }
 

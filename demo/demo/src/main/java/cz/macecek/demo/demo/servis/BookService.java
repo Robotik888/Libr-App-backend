@@ -33,4 +33,7 @@ public class BookService {
     public void remove(String name) {
         repository.remove(name);
     }
+    public List<String> getAllNames() {
+        return repository.findAllNames();
+    }
 }

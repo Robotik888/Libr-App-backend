@@ -19,10 +19,23 @@ public class DummyBookRepository implements BookRepository {
         return books;
     }
     public void remove(String name) {
+        ArrayList<Book>  toRemove = new ArrayList<>();
+        int index = 0;
         for (Book book: this.books) {
             if (book.getName().equals(name)) {
-                books.remove(book);
-            }
+                toRemove.add(book);
+           }
         }
+        for (Book book: toRemove) {
+            this.books.remove(book);
+        }
+    }
+
+    public List<String> findAllNames() {
+        List<String> booksNames = new ArrayList<>();
+        for (Book book: this.books) {
+            booksNames.add(book.getName());
+        }
+        return booksNames;
     }
 }
