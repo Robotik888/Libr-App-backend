@@ -9,4 +9,5 @@ public interface BorrowRepository {
     List<Borrow> findAll();
     List<Borrow> findAllDelayed();
     void remove(String title);
+    List<String> findAllNames();
 }

@@ -43,4 +43,12 @@ public class DummyBorrowRepository implements BorrowRepository {
         }
         return delayed;
     }
+
+    public List<String> findAllNames() {
+        List<String> borrowsNames = new ArrayList<>();
+        for (Borrow borrow: this.borrows) {
+            borrowsNames.add(borrow.getTitle());
+        }
+        return borrowsNames;
+    }
 }

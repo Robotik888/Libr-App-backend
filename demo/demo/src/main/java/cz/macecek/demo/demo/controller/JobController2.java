@@ -39,4 +39,10 @@ public class JobController2 {
         System.out.println("Get All Delayed Borrows call");
         return borrowService.getAllDelayed();
     }
+
+    @GetMapping(value = "/list/names")
+    public List<String> getAllBorrowNames() {
+        System.out.println("Get All Borrow Names Call");
+        return borrowService.getAllNames();
+    }
 }

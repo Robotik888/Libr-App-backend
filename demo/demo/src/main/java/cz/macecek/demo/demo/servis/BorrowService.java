@@ -35,5 +35,9 @@ public class BorrowService {
     public List<Borrow> getAllDelayed(){
         return repository.findAllDelayed();
     }
+
+    public List<String> getAllNames() {
+        return repository.findAllNames();
+    }
     }
 
