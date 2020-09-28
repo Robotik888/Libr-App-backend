@@ -7,4 +7,6 @@ import java.util.List;
 public interface BorrowRepository {
     void save(Borrow borrow);
     List<Borrow> findAll();
+    List<Borrow> findAllDelayed();
+    void remove(String title);
 }

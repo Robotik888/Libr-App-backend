@@ -22,9 +22,21 @@ public class JobController2 {
         borrowService.add(borrow);
     }
 
+    @PostMapping(value = "/remove")
+    public void removeBorrow(@RequestBody String title) {
+        System.out.println("Remove Borrow Call (for book: " + title + ")");
+        borrowService.remove(title);
+    }
+
     @GetMapping(value = "/listBorrow")
     public List<Borrow> getAllBorrows() {
         System.out.println("Get All Borrows call");
         return borrowService.getAll();
+    }
+
+    @GetMapping(value = "/listDelayedBorrow")
+    public List<Borrow> getAllDelayedBorrows() {
+        System.out.println("Get All Delayed Borrows call");
+        return borrowService.getAllDelayed();
     }
 }

@@ -24,9 +24,16 @@ public class BorrowService {
 
         repository.save(borrow);
     }
+    public void remove(String title) {
+        repository.remove(title);
+    }
+
     public List<Borrow> getAll(){
         return repository.findAll();
     }
 
+    public List<Borrow> getAllDelayed(){
+        return repository.findAllDelayed();
+    }
     }
 
