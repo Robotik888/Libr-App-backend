@@ -18,8 +18,6 @@ public class BorrowService {
 
 
     public void add(Borrow borrow) {
-
-
         borrow.setCreated(LocalDate.now());
 
         repository.save(borrow);

@@ -1,6 +1,7 @@
 package cz.macecek.demo.demo.model;
 import java.time.LocalDate;
 public class Borrow {
+
     private String title;
     private String name;
     private String returnDate;

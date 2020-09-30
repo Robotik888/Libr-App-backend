@@ -1,12 +1,14 @@
 package cz.macecek.demo.demo.model;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
 public class Book {
+
     private String name;
     private int year;
     private String genre;
-    private LocalDate crated;
+    private LocalDate created;
 
     public Book(String name, int year, String genre) {
         this.name = name;
@@ -23,10 +25,12 @@ public class Book {
                 "name='" + name + '\'' +
                 ", year=" + year +
                 ", genre='" + genre + '\'' +
+                ", created=" + created +
                 '}';
     }
-    public void setCrated(LocalDate created) {
-        this.crated = created;
+
+    public void setCreated(LocalDate created) {
+        this.created = created;
     }
 
     public String getName() {
@@ -41,8 +45,8 @@ public class Book {
         return genre;
     }
 
-    public LocalDate getCrated() {
-        return crated;
+    public LocalDate getCreated() {
+        return created;
     }
 
     public void setName(String name) {
@@ -55,5 +59,21 @@ public class Book {
 
     public void setGenre(String genre) {
         this.genre = genre;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Book book = (Book) o;
+        return year == book.year &&
+                Objects.equals(name, book.name) &&
+                Objects.equals(genre, book.genre) &&
+                Objects.equals(created, book.created);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, year, genre, created);
     }
 }

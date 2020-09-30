@@ -9,10 +9,10 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/borrow")
-public class JobController2 {
+public class BorrowController {
     private final BorrowService borrowService;
 
-    public JobController2(@Autowired BorrowService borrowService) {
+    public BorrowController(@Autowired BorrowService borrowService) {
         this.borrowService = borrowService;
     }
     @PostMapping(value = "/addBorrow")
